@@ -1,6 +1,29 @@
-{
-    "pack": {
-        "description": "Tensura Nameable",
-        "pack_format": 9
+plugins {
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.spongepowered.mixin' version '0.7.+'
+}
+version = '1.0.0'
+group = 'com.tensuranameable'
+archivesBaseName = 'tensura-nameable'
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+minecraft {
+    mappings channel: 'official', version: '1.19.2'
+}
+mixin {
+    add sourceSets.main, 'tensura_nameable.refmap.json'
+    config 'tensura_nameable.mixins.json'
+}
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.19.2-43.3.0'
+}
+jar {
+    manifest {
+        attributes([
+            'MixinConfigs': 'tensura_nameable.mixins.json',
+            'Specification-Title': 'tensura-nameable',
+            'Specification-Version': '1',
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.jar.archiveVersion,
+        ])
     }
 }
