@@ -1,0 +1,20 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="MIT"
+[[mods]]
+modId="tensura_nameable"
+version="1.0.0"
+displayName="Tensura Nameable"
+description="Makes all entities nameable as Tensura subordinates."
+[[dependencies.tensura_nameable]]
+    modId="forge"
+    mandatory=true
+    versionRange="[43,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.tensura_nameable]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2,1.20)"
+    ordering="NONE"
+    side="BOTH"
